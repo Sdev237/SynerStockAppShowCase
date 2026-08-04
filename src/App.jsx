@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
       {/* Navbar */}
-  
+  <h1 className="sr-only">SynerStock Showcase Bonjour</h1>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
