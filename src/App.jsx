@@ -130,6 +130,7 @@ function App() {
             {t('hero.title2')}
           </span>
         </h1>
+        <h1>Bonjour les dev</h1>
         <p className="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
           {t('hero.subtitle')}
         </p>
