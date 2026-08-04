@@ -1,8 +1,43 @@
-# React + Vite
+# SynerStock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Built to Scale. Designed for Users.
 
-Currently, two official plugins are available:
+SynerStock is a modern Multi-Tenant ERP SaaS platform designed to help businesses manage inventory, sales, and operations efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- React Router
+
+### Backend
+- ASP.NET Core
+- C#
+- Entity Framework Core
+- SQL Server
+
+### Architecture
+- Multi-Tenant Architecture
+- Clean Architecture
+- REST API
+- Cloud-ready deployment
+
+## 🎯 Features
+
+- Multi-company management
+- Inventory tracking
+- Sales management
+- Dashboard analytics
+- Secure authentication
+
+## 📸 Preview
+
+(Add screenshots here)
+
+## 🛠 Installation
+
+```bash
+npm install
+npm run dev
