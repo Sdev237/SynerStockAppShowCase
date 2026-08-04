@@ -38,7 +38,89 @@ function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
       {/* Navbar */}
-  <h1 className="sr-only">SynerStock Showcase Bonjour</h1>
+      <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">S</span>
+            </div>
+            <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">SynerStock</span>
+          </div>
+          <div className="hidden md:flex items-center gap-6">
+            <a href="#features" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('navbar.features')}</a>
+            <a href="#architecture" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('navbar.architecture')}</a>
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-gray-900 dark:bg-gray-800 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors">
+              {t('navbar.github')}
+            </a>
+            <button
+              onClick={toggleDarkMode}
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <Globe className="w-4 h-4" />
+              {i18n.language.toUpperCase()}
+            </button>
+          </div>
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={toggleDarkMode}
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-2 rounded-md"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-2 rounded-md"
+            >
+              <Globe className="w-4 h-4" />
+              {i18n.language.toUpperCase()}
+            </button>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none p-2"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Panel */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-lg absolute w-full left-0 top-16 animate-fade-in-up z-40">
+            <div className="px-4 pt-2 pb-6 space-y-4 flex flex-col">
+              <a 
+                href="#features" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900 rounded-md"
+              >
+                {t('navbar.features')}
+              </a>
+              <a 
+                href="#architecture" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900 rounded-md"
+              >
+                {t('navbar.architecture')}
+              </a>
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-3 py-3 text-center text-base font-medium text-white bg-gray-900 dark:bg-gray-800 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 mt-4"
+              >
+                {t('navbar.github')}
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
