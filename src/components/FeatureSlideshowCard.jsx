@@ -38,7 +38,7 @@ const FeatureSlideshowCard = ({ title, description, images, icon: Icon, reverse,
           
           {/* Slideshow Container */}
           <div 
-            className="relative bg-slate-900 ring-1 ring-gray-900/5 rounded-2xl shadow-xl overflow-hidden aspect-[16/9] flex items-center justify-center cursor-pointer group/image"
+            className="relative bg-slate-900 border border-gray-800 rounded-2xl shadow-sm overflow-hidden aspect-[16/9] flex items-center justify-center cursor-pointer group/image"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => setIsLightboxOpen(true)}

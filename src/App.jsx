@@ -36,9 +36,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+    <div className="min-h-screen bg-[#f5f5f7] dark:bg-gray-950 transition-colors duration-300">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+      <nav className="fixed top-0 w-full bg-[#f5f5f7]/80 dark:bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -92,7 +92,7 @@ function App() {
 
         {/* Mobile Menu Panel */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-lg absolute w-full left-0 top-16 animate-fade-in-up z-40">
+          <div className="md:hidden bg-[#f5f5f7] dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-sm absolute w-full left-0 top-16 animate-fade-in-up z-40">
             <div className="px-4 pt-2 pb-6 space-y-4 flex flex-col">
               <a 
                 href="#features" 
@@ -134,10 +134,10 @@ function App() {
           {t('hero.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#features" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-0.5">
+          <a href="#features" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-sm transition-all hover:-translate-y-0.5">
             {t('hero.btnDemo')}
           </a>
-          <a href="#architecture" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-gray-900 dark:text-white bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+          <a href="#architecture" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-gray-900 dark:text-white bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 shadow-sm transition-all">
             {t('hero.btnTech')}
           </a>
         </div>
@@ -189,7 +189,7 @@ function App() {
           >
             <button 
               onClick={() => setIsBoutiqueModalOpen(true)}
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm transition-all hover:-translate-y-0.5"
             >
               {t('showcase.boutique.btnMore')}
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

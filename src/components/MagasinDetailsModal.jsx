@@ -60,7 +60,7 @@ const MagasinDetailsModal = ({ isOpen, onClose }) => {
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
         
         {/* Conteneur principal de la modale */}
-        <div className="relative w-full h-full bg-slate-900 ring-1 ring-gray-900/5 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center">
+        <div className="relative w-full h-full bg-slate-900 border border-gray-700 rounded-2xl shadow-md overflow-hidden flex items-center justify-center">
           {images.map((src, idx) => (
             <img 
               key={idx}
