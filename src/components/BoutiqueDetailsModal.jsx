@@ -58,12 +58,10 @@ const BoutiqueDetailsModal = ({ isOpen, onClose }) => {
         <X className="w-6 h-6" />
       </button>
 
-      <div className="relative w-full max-w-5xl aspect-[16/9] group">
-        {/* Effet de lueur (Glow) comme sur le design demandé */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+      <div className="relative w-[95vw] max-w-[1400px] aspect-[16/9] group">
         
         {/* Conteneur principal de la modale */}
-        <div className="relative w-full h-full bg-slate-900 border border-gray-700 rounded-2xl shadow-md overflow-hidden flex items-center justify-center">
+        <div className="relative w-full h-full bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-white/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-none overflow-hidden flex items-center justify-center transition-colors">
           {images.map((src, idx) => (
             <img 
               key={idx}

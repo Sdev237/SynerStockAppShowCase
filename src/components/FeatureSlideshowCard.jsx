@@ -34,11 +34,10 @@ const FeatureSlideshowCard = ({ title, description, images, icon: Icon, reverse,
     <>
       <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 py-16 border-b border-gray-100 dark:border-gray-800 last:border-0 transition-colors`}>
         <div className="flex-1 w-full relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
           
           {/* Slideshow Container */}
           <div 
-            className="relative bg-slate-900 border border-gray-800 rounded-2xl shadow-sm overflow-hidden aspect-[16/9] flex items-center justify-center cursor-pointer group/image"
+            className="relative bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-white/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-none overflow-hidden aspect-[16/9] flex items-center justify-center cursor-pointer group/image transition-colors"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => setIsLightboxOpen(true)}
