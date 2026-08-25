@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Maximize2, X } from 'lucide-react';
+import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const FeatureSlideshowCard = ({ title, description, images, icon: Icon, reverse, features, children }) => {
@@ -7,6 +7,14 @@ const FeatureSlideshowCard = ({ title, description, images, icon: Icon, reverse,
   const [isHovered, setIsHovered] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const { t } = useTranslation();
+
+  const nextSlide = () => {
+    if (images) setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    if (images) setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   useEffect(() => {
     // Pause slideshow if there's only 1 image, or if user is hovering, or if lightbox is open
@@ -19,16 +27,18 @@ const FeatureSlideshowCard = ({ title, description, images, icon: Icon, reverse,
     return () => clearInterval(interval);
   }, [images, isHovered, isLightboxOpen]);
 
-  // Handle Esc key to close modal
+  // Handle keys
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setIsLightboxOpen(false);
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
     };
     if (isLightboxOpen) {
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isLightboxOpen]);
+  }, [isLightboxOpen, images]);
 
   return (
     <>
@@ -105,15 +115,29 @@ const FeatureSlideshowCard = ({ title, description, images, icon: Icon, reverse,
             <X className="w-6 h-6" />
           </button>
           
-          <div className="relative w-full h-full flex flex-col items-center justify-center animate-fade-in-up">
+          <div className="relative w-full h-full flex flex-col items-center justify-center animate-fade-in-up group/lightbox">
             <img 
               src={images[currentIndex]} 
               alt={t('slideshow.expandedView', { title })} 
-              className="w-full h-full max-h-[85vh] object-contain drop-shadow-2xl rounded-xl"
+              className="w-full h-full max-h-[85vh] object-contain drop-shadow-2xl rounded-2xl"
             />
             
+            <button 
+              onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md transition-all opacity-0 group-hover/lightbox:opacity-100 focus:opacity-100"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+
+            <button 
+              onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md transition-all opacity-0 group-hover/lightbox:opacity-100 focus:opacity-100"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
             {/* Pagination dots for the modal */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 p-3 bg-black/50 backdrop-blur-md rounded-full">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 p-3 bg-black/50 backdrop-blur-md rounded-full opacity-0 group-hover/lightbox:opacity-100 transition-opacity duration-300">
               {images.map((_, idx) => (
                 <button 
                   key={idx}

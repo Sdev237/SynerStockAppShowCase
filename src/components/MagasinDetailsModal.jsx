@@ -58,13 +58,13 @@ const MagasinDetailsModal = ({ isOpen, onClose }) => {
       <div className="relative w-[95vw] max-w-[1400px] aspect-[16/9] group">
         
         {/* Conteneur principal de la modale */}
-        <div className="relative w-full h-full bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-white/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-none overflow-hidden flex items-center justify-center transition-colors">
+        <div className="relative w-full h-full flex items-center justify-center">
           {images.map((src, idx) => (
             <img 
               key={idx}
               src={src} 
               alt={`Slide ${idx + 1}`} 
-              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 w-full h-full object-contain rounded-2xl transition-opacity duration-500 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
               loading="lazy"
             />
           ))}
