@@ -152,7 +152,7 @@ function App() {
         </div>
       </div>
 
-      {/* Feature Showcases */}
+      {/* Feature-Showcases */}
       <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('showcase.title')}</h2>
@@ -218,7 +218,7 @@ function App() {
         </div>
       </section>
 
-      {/* Architecture Highlights */}
+      {/*Architecture Highlights*/}
       <section id="architecture" className="bg-gray-900 py-24 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
