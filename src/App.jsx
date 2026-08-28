@@ -44,7 +44,7 @@ function App() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">S</span>
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">SynerStock Demo</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">SynerStock</span>
           </div>
           <div className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t('navbar.features')}</a>
